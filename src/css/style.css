@@ -1,0 +1,114 @@
+@import "nullstyle.css";
+
+@import "fonts.css";
+
+* {
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 300;
+}
+
+html {
+    font-size: 16pt;
+    color: #fff
+}
+
+body {
+    font-size: 1rem;
+    background: rgb(16, 16, 20);
+}
+
+h2 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+div.main {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+div.main > div {
+    background: rgb(32, 32, 40);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+div.video {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+}
+
+div.video > * {
+    border-radius: 1rem;
+    width: fit-content;
+    height: 100%;
+    max-height: 100%;
+	rotate: 180deg;
+}
+
+div.control {
+    width: calc(30% - 1rem);
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+div.control > div {
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+}
+
+div.control > div:first-child {
+    margin-top: 0;
+}
+
+div.control > div > div {
+    margin-bottom: .25rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+div.control > div > div:first-child {
+    margin-bottom: .5rem;
+}
+
+div.logs {
+    width: 100%;
+    height: calc(30% - 1rem);
+    margin-top: 1rem;
+    overflow-y: scroll;
+}
+
+div.log {
+    width: 100%;
+    background:rgb(48, 48, 60);
+    border-radius: 1rem;
+    padding: .5rem;
+    margin-top: .5rem;
+}
+
+div.log:first-child {
+    margin-top: 0;
+}
+
+div.log.error {
+    background:rgb(96, 48, 48);
+}
+
+div.log.warning {
+    background:rgb(96, 96, 48);
+}
+
+div.log.success {
+    background:rgb(48, 96, 48);
+}

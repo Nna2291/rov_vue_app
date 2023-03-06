@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <base href="/" />
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Control Panel</title>
+</head>
+
+<body>
+    <script src="src/axios.min.js"></script>
+    <div class="main">
+        <div class="video">
+            <img src="http://raspberrypi.local:8080/?action=stream"></img>
+        </div>
+        <div class="control">
+            <div class="sensors">
+                <div class="subtitle">
+                    <h2>
+                        Датчики
+                    </h2>
+                </div>
+                <div class="sensor">
+                    <div class="name">
+                        <h3>
+                            Температура
+                        </h3>
+                    </div>
+                    <div class="data">
+                        <h3>
+                            <strong id="temp">
+                                0
+                            </strong>
+                            <strong>
+                                °C
+                            </strong>
+                        </h3>
+                    </div>
+                </div>
+                <div class="sensor">
+                    <div class="name">
+                        <h3>
+                            Глубина
+                        </h3>
+                    </div>
+                    <div class="data">
+                        <h3>
+                            <strong id="depth">
+                                0
+                            </strong>
+                            <strong>
+                                м
+                            </strong>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!--
+                    <div class="position">
+                <div class="subtitle">
+                    <h2>
+                        Положение
+                    </h2>
+                </div>
+                <div class="axis">
+                    <div class="name">
+                        <h3>
+                            X
+                        </h3>
+                    </div>
+                    <div class="data">
+                        <h3>
+                            <strong>
+                                0
+                            </strong>
+                        </h3>
+                    </div>
+                </div>
+                <div class="axis">
+                    <div class="name">
+                        <h3>
+                            Y
+                        </h3>
+                    </div>
+                    <div class="data">
+                        <h3>
+                            <strong>
+                                0
+                            </strong>
+                        </h3>
+                    </div>
+                </div>
+                <div class="axis">
+                    <div class="name">
+                        <h3>
+                            Z
+                        </h3>
+                    </div>
+                    <div class="data">
+                        <h3>
+                            <strong>
+                                0
+                            </strong>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="orientation">
+                <div class="subtitle">
+                    <h2>
+                        Ориентация
+                    </h2>
+                </div>
+                <div class="axis">
+                    <div class="name">
+                        <h3>
+                            X
+                        </h3>
+                    </div>
+                    <div class="data">
+                        <h3>
+                            <strong>
+                                0
+                            </strong>
+                        </h3>
+                    </div>
+                </div>
+                <div class="axis">
+                    <div class="name">
+                        <h3>
+                            Y
+                        </h3>
+                    </div>
+                    <div class="data">
+                        <h3>
+                            <strong>
+                                0
+                            </strong>
+                        </h3>
+                    </div>
+                </div>
+                <div class="axis">
+                    <div class="name">
+                        <h3>
+                            Z
+                        </h3>
+                    </div>
+                    <div class="data">
+                        <h3>
+                            <strong>
+                                0
+                            </strong>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+                -->
+        </div>
+        <div class="logs" id="logs">
+
+        </div>
+    </div>
+    </div>
+    <script src='/src/renderer.js'></script>
+</body>
+</html>
