@@ -108,8 +108,8 @@ window.addEventListener("axis", function (e) {
       break;
     case "march":
       var namee = "МАРШ";
-      var id1 = 5;
-      var id2 = 4;
+      var id1 = 3;
+      var id2 = 6;
       break;
   }
   var div = document.createElement("div");
