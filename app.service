@@ -1,6 +1,6 @@
 [Service]
 WorkingDirectory=/home/pi/rov_vue_app
-ExecStart=cd /home/pi/rov_vue_app && sudo npm run dev
+ExecStart=sudo npm run dev
 Restart=always
 StandardOutput=syslog
 StandardError=syslog

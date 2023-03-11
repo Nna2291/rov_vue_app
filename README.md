@@ -1,29 +1,26 @@
-# rov_vue_app
+# Веб версия приложения для управления ТНПА
 
-This template should help get you started developing with Vue 3 in Vite.
+Данная версия приложения для компьютера оператора создана для возмоности управления ТНПА с любого устройства с ethernet входом
 
-## Recommended IDE Setup
+## Установка, запуск и создания юнита для приложения
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Для клонирования и запуска данного репозитория необходим [Git](https://git-scm.com) и [Node.js](https://nodejs.org/en/download/) (который устанавилвается на ваш компьюетр вместе с [npm](http://npmjs.com)). После этого введите:
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+```bash
+# Клонирование репозитория
+git clone https://github.com/Nna2291/rov_vue_app.git
+# Перейдите в директорию
+cd rov_vue_app
+# Установите зависимости
+npm i
+# Добавьте службу в загрузку
+sudo systemctl enable app.service
+# Включите службу
+sudo systemctl start app
 ```
 
-### Compile and Hot-Reload for Development
-
+### Для перехода в панель управления необходимо перейти по адресу
 ```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
+http://raspberrypi.local:5173/
 ```
