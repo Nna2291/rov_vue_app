@@ -3,25 +3,28 @@ var last = {
   axes: [],
 };
 
-
-
 ass = function () {
   var pad = navigator.getGamepads()[0];
 
   for (i = 0; i < pad.buttons.length; i++) {
     var btn = pad.buttons[i];
 
-    if (last.buttons[i] != undefined) {
-      if (btn.pressed != last.buttons[i]) {
-        var e = new Event("btn");
+    var value = Math.round(btn.value * 100);
+    value= Math.round(value / 10) * 10;
+
+    if (last.buttons[i] != undefined && value != last.buttons[i]) {
+      var e = new Event("btn");
         e.index = i;
         e.gamepad = pad;
         e.pressed = btn.pressed;
-        last.buttons[i] = btn.pressed;
-        window.dispatchEvent(e);
-      }
-    } else {
-      last.buttons[i] = btn.pressed;
+        e.value = value;
+        last.buttons[i] = value;
+        if (value >= 30 || value == 0){
+          window.dispatchEvent(e);
+        }
+    } 
+    if (last.buttons[i] == undefined) {
+      last.buttons[i] = value;
     }
   }
 
@@ -37,10 +40,14 @@ ass = function () {
 
     if (last.axes[i] != undefined && axis != last.axes[i]) {
       var e = new Event("axis");
+      console.log(i)
       switch (i) {
         case 1:
           e.index = "glubina";
           break;
+        case 0:
+          e.index = "lag";
+          break
         case 3:
           e.index = "march";
           break;
@@ -48,7 +55,7 @@ ass = function () {
       e.speed = Math.abs(axis);
       e.reverse = reverse;
       last.axes[i] = axis;
-      if (e.index && (e.speed >= 20 || e.speed == 0)) {
+      if (e.index && (e.speed >= 30 || e.speed == 0)) {
         window.dispatchEvent(e);
       }
     }

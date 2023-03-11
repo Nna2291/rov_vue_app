@@ -2,19 +2,25 @@ window.addEventListener("axis", function (e) {
     console.log(e.index, e.speed, e.reverse);
     switch (e.index) {
       case "lag":
-        var namee = "МАРШ";
+        var namee = "ЛАГ";
         var id1 = 4;
-        var id2 = 6;
+        var id2 = 5;
+        reverse1 = e.reverse;
+        reverse2 = !(e.reverse);
         break;
       case "glubina":
         var namee = "ГЛУБИНА";
         var id1 = 1;
         var id2 = 2;
+        reverse1 = e.reverse;
+        reverse2 = e.reverse;
         break;
       case "march":
         var namee = "МАРШ";
         var id1 = 5;
         var id2 = 4;
+        reverse1 = e.reverse;
+        reverse2 = e.reverse;
         break;
     }
     var div = document.createElement("div");
@@ -25,7 +31,7 @@ window.addEventListener("axis", function (e) {
     } else {
       div.className = "log success";
       var namee = `${namee} движение ${e.speed}%`;
-      on(id1, id2, e.reverse, e.reverse, e.speed);
+      on(id1, id2, reverse1, reverse2, e.speed);
     }
   
     div.innerHTML = `<h4>${namee}</h4>`;
@@ -52,11 +58,4 @@ window.addEventListener("axis", function (e) {
     });
   }
   
-  function on_test(id1, reverse1, speed) {
-    axios.post(link + "/api/engine/on", {
-      id1: id1,
-      reverse1: reverse1,
-      speed: speed,
-    });
-  }
   
